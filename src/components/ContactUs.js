@@ -3,7 +3,6 @@ import emailjs from '@emailjs/browser';
 import { Form } from 'react-bootstrap';
 import FormContainer from '../components/FormContainer';
 import Popup from 'reactjs-popup';
-import 'reactjs-popup/dist/index.css';
 import{ init } from '@emailjs/browser';
 init("k1rZyMHa8BFwYBJaX");
 
