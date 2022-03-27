@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ContactUs } from './ContactUs';
-
+import { SocialIcon } from 'react-social-icons';
 export function Footer () {
   return (
     <footer className="footer">
@@ -13,6 +13,10 @@ export function Footer () {
             <Link to="/sign-up">Sign up</Link>
             <Link to="/sign-in">Sign in</Link>
             <Link to="/">Home</Link>
+          </div>
+          <div className="social">
+          <SocialIcon url="https://twitter.com/" />
+          <SocialIcon url="https://facebook.com/" />
           </div>
         </div>
       </div>
