@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-/**import { ContactUs } from './ContactUs';**/
+import { ContactUs } from './ContactUs';
 
 export function Footer () {
   return (
@@ -9,6 +9,7 @@ export function Footer () {
         <div className="footer-container">
           <h2>Shop and Learn</h2>
           <div className="footer-content">
+          <ContactUs />
             <Link to="/sign-up">Sign up</Link>
             <Link to="/sign-in">Sign in</Link>
             <Link to="/">Home</Link>
