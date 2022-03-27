@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ContactUs } from './ContactUs';
+/**import { ContactUs } from './ContactUs';**/
 
 export function Footer () {
   return (
@@ -15,7 +15,6 @@ export function Footer () {
           </div>
         </div>
       </div>
-      <ContactUs />
       <hr className="line" />
       <p className="copyright">
         Copyright © 2022 HIVE TechWear. All rights reserved. <Link to="/policy">Privacy Policy</Link> | <Link to='/terms'>Term
