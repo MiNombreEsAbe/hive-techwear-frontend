@@ -103,6 +103,16 @@ body {
 .logo {
     width: 100px;
 }
+.filldiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+.filler {
+    inline-size: 800px;
+}
 .popup-content {
     position: absolute;
     z-index: 999;
