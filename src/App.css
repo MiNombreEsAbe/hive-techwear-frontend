@@ -39,11 +39,6 @@ body {
 	.bannerimage {
 		display: none;
 	}
-    .popup-content {
-        position: fixed !important;
-        left: 9px !important;
-        top: 166.1719px !important;
-    }
 }
 .footer {
     padding: 30px 120px 10px 120px;
@@ -110,40 +105,15 @@ body {
     align-content: center;
     flex-wrap: wrap;
 }
+
 .filler {
     inline-size: 800px;
-}
-.popup-content {
-    position: absolute;
-    z-index: 999;
-    pointer-events: auto;
-    top: 532.43px;
-    left: 267px;
-    background-color: white;
-    width: auto !important;
-    height: auto !important;
-    padding: 10px;
 }
 .con {
     box-sizing: inherit;
     display: table-caption;
 }  
-.message {
-    border-radius: 4px !important;
-    width: 443px !important;
-    margin-bottom: 20px; 
-    height: 100%;
-    padding: 12px 20px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-}
-.contact {
-    background-color: #373836;
-    color: #FFF;
-}
-.name {
-    width: 443px;
-}
+
 .social {
     margin-left: -4%;
 }
