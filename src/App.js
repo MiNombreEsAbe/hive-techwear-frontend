@@ -1,5 +1,8 @@
 import './bootstrap.min.css';
 import './App.css';
+import './assets/filler.css';
+import './assets/footer.css';
+import './assets/headerlanding.css';
 import React from 'react';
 import { BrowserRouter} from 'react-router-dom';
 import { Footer } from './components/Footer'
