@@ -22,8 +22,9 @@ export function Footer () {
         </div>
       </div>
       <div className="social">
-        <SocialIcon className="twitter" url="https://twitter.com/" />
+        <SocialIcon url="https://twitter.com/" />
         <SocialIcon url="https://facebook.com/" />
+        <SocialIcon url="https://www.instagram.com/" />
       </div>
       <p className="copyright">
         Copyright © 2022 HIVE TechWear. All rights reserved. <Link to="/policy">Privacy Policy</Link> | <Link to='/terms'>Term
