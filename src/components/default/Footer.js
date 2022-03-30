@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ContactUs } from './ContactUs';
+import { ContactUs } from '../contactUs/ContactUs';
 import { SocialIcon } from 'react-social-icons';
 export function Footer () {
   return (
