@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { HomeScreen } from './screens/HomeScreen';
 import { FillerText } from './screens/FillerText';
-import { ContactUs } from './components/ContactUs';
+import { ContactUs } from './components/contactUs/ContactUs';
 
 const Router = () => {
     return (
