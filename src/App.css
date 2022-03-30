@@ -1,8 +1,7 @@
-
-
-
-
-
+@font-face {
+    font-family: Sparta;
+    src: url(/src/assets/fonts/Spartan-VariableFont_wght.ttf);
+}
 .con {
     box-sizing: inherit;
     display: table-caption;
