@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { Form } from 'react-bootstrap';
-import FormContainer from '../components/FormContainer';
+import FormContainer from './FormContainer';
 import{ init } from '@emailjs/browser';
 import './contact.css'
 init("k1rZyMHa8BFwYBJaX");

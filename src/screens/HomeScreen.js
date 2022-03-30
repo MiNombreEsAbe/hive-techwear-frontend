@@ -2,11 +2,13 @@ import React from 'react'
 import { Container } from 'react-bootstrap'
 import Banner from '../assets/images/Banner.png'
 import BannerMobile from '../assets/images/Banner-Mobile.png'
+import Header from '../components/default/Header'
 
 export function HomeScreen() {
 
     return (
         <div>
+            <Header />
             <div className='Banner'>
             <img className='bannerimage' src={ Banner } alt='HiveBanner'/>
             <img className='bannermobile' src={BannerMobile} alt="MobileBanner" />
