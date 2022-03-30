@@ -2,6 +2,7 @@ html,
 body {
     height: 100%;
     font-family: sans-serif;
+	width: 100%;
 }
 .banner {
 	position: relative;
@@ -41,7 +42,7 @@ body {
 
 	.bannertext {
 		left: 5%;
-		top: 25%;
+		top: 8%;
 	}
 
 	.bannertext p {
@@ -66,8 +67,8 @@ body {
     }
 
 	.bannertext {
-		left: 5%;
-		top: 25%;
+		left: 3%;
+		top: 7%;
 	}
 
 	.category {
@@ -75,7 +76,7 @@ body {
 	}
 
 	.bannertxt1 {
-		margin: 20px 0px;
+		margin: 42px 0px;
 	}
 
 	.bannertxt1{
@@ -103,16 +104,13 @@ body {
 		left: 5%;
 		top: 25%;
 	}
-	.bannertxt1{
-		margin: 20px 0px;
-	}
 
 	.bannertxt1 {
-		font-size: 30px;
+		font-size: 25px;
 	}
 
 	.bannertxt2 {
-		font-size: 20px;
+		font-size: 18px;
 	}
 
 	.bannertxt3 {
@@ -131,7 +129,7 @@ body {
     }
 
 	.bannertext {
-		top: 10%;
+		top: 12%;
 	}
 
 	.bannerimage {
