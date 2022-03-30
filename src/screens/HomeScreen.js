@@ -13,9 +13,13 @@ export function HomeScreen() {
             <img className='bannerimage' src={ Banner } alt='HiveBanner'/>
             <img className='bannermobile' src={BannerMobile} alt="MobileBanner" />
             <div className="bannertext">
+                <div className='bannertxt1'>
 				<p>Clothing Divine Getting</p>
 				<p>Everyone's Favorite</p>
+                </div>
+                <div className='bannertxt2'>
 				<p>This Season's most - loved Styles</p>
+                </div>
 			</div>
             </div>
             <Container>
