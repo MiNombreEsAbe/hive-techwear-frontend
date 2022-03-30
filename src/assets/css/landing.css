@@ -3,7 +3,6 @@ body {
     height: 100%;
     font-family: sans-serif;
 }
-
 .banner {
 	position: relative;
 }
@@ -21,6 +20,104 @@ body {
 	top: 20%;
 	left: 10%;
 	position: absolute;
+	font-family: Sparta;
+}
+.bannertxt1 {
+    margin: 20px 0px;
+	font-weight: 500;
+	text-shadow: 1px 1px 4px #000000;
+	font-size: 70px;
+}
+.bannertxt2 {
+	margin: 20px 40px;
+	font-weight: 500;
+	text-shadow: 1px 2px 2px #000000;
+	font-size: 40px;
+}
+@media only screen and (max-width: 1024px) {
+    .category-text {
+        font-size: 18px;
+    }
+
+	.bannertext {
+		left: 5%;
+		top: 25%;
+	}
+
+	.bannertext p {
+		margin: 20px 0px;
+	}
+
+	.bannertxt1 {
+		font-size: 35px;
+	}
+
+	.bannertxt2 {
+		font-size: 25px;
+	}
+
+	.bannertxt3 {
+		font-size: 20px;
+	}
+}
+@media only screen and (max-width: 820px) {
+    .category-text {
+        font-size: 24px;
+    }
+
+	.bannertext {
+		left: 5%;
+		top: 25%;
+	}
+
+	.category {
+		width: 100%;
+	}
+
+	.bannertxt1 {
+		margin: 20px 0px;
+	}
+
+	.bannertxt1{
+		font-size: 30px;
+	}
+
+	.bannertext2 {
+		font-size: 20px;
+	}
+
+	.bannertxt3 {
+		font-size: 15px;
+	}
+}
+@media only screen and (max-width: 730px) {
+	.landing-container {
+		margin: 40px 100px;
+	}
+
+    .category-text {
+        font-size: 24px;
+    }
+
+	.bannertext {
+		left: 5%;
+		top: 25%;
+	}
+	.bannertxt1{
+		margin: 20px 0px;
+	}
+
+	.bannertxt1 {
+		font-size: 30px;
+	}
+
+	.bannertxt2 {
+		font-size: 20px;
+	}
+
+	.bannertxt3 {
+		font-size: 15px;
+	}
 }
 @media only screen and (max-width: 560px) {
 
