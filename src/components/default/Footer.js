@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import { ContactUs } from '../contactUs/ContactUs';
 import { SocialIcon } from 'react-social-icons';
 
 export function Footer () {
@@ -10,7 +9,6 @@ export function Footer () {
         <div className="footer-container">
           <h2>Shop and Learn</h2>
           <div className="footer-content">
-            {/* <ContactUs /> */}
             <Link to="/signup">Sign up</Link>
             <Link to="/signin">Sign in</Link>
             <Link to="/itemlists">Item Lists</Link>
@@ -19,7 +17,6 @@ export function Footer () {
         <div className="footer-container">
           <h2>Support</h2>
           <div className="footer-content">
-            {/* <ContactUs /> */}
             <Link to="/contactus">Contact Us</Link>
           </div>
         </div>
@@ -30,7 +27,7 @@ export function Footer () {
       </div>
       <p className="copyright">
         Copyright © 2022 HIVE TechWear. All rights reserved. <Link to="/policy">Privacy Policy</Link> | <Link to='/terms'>Term
-        of Use Sales Policy</Link> | <Link to='/legal'>Legal</Link> | <Link to='/xml'>Site Map</Link>
+        of Use Sales Policy</Link> | <Link to='/legal'>Legal</Link> | <Link to='/robots.txt'>Site Map</Link>
       </p>
     </footer>
   );
