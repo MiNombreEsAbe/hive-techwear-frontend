@@ -3,7 +3,6 @@ import emailjs from '@emailjs/browser';
 import { Form } from 'react-bootstrap';
 import FormContainer from './FormContainer';
 import{ init } from '@emailjs/browser';
-import './contact.css'
 init("k1rZyMHa8BFwYBJaX");
 
 export const ContactUs = () => {

@@ -1,13 +1,21 @@
 @font-face {
     font-family: Sparta;
-    src: url(/src/assets/fonts/Spartan-VariableFont_wght.ttf);
+    src: url('./assets/fonts/Spartan-VariableFont_wght.ttf');
 }
 .con {
     box-sizing: inherit;
     display: table-caption;
 }  
 
+#root {
+    width: 100%;
+    height: 100vh;
+}
+
 @import url('./assets/css/landing.css');
 @import url('./assets/css/filler.css');
 @import url('./assets/css/footer.css');
 @import url('./assets/css/header.css');
+@import url('./assets/css/contact.css');
+@import url('./assets/css/signup.css');
+@import url('./assets/css/signin.css');

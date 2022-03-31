@@ -2,9 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import createStore from './redux/store/store';
+import * as History from 'history';
+import { Provider } from 'react-redux';
+
+const history = History.createBrowserHistory();
+export const store = createStore(history);
 
 ReactDOM.render(
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
   ,document.getElementById('root')
 );
 
