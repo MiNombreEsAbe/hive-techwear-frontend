@@ -13,5 +13,7 @@ export const ItemReducer = (state = initialState.items, action) => {
                     }
                 }
             }
+        default:
+            return state;
     }
 }

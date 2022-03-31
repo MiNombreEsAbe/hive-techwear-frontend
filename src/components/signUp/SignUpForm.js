@@ -1,6 +1,10 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { signUp } from "../../redux/user/operations";
+import { Link } from "react-router-dom";
 
 export default function SignUpForm() {
+    const dispatch = useDispatch();
     const initialValues = {
         name: '',
         email: '',
@@ -8,6 +12,7 @@ export default function SignUpForm() {
         confirmPassword: ''
     }
     const [values, setValues] = useState(initialValues);
+    const [error, setError] = useState(false);
 
     const handleChange = e => {
         const { name, value } = e.target;
@@ -18,9 +23,18 @@ export default function SignUpForm() {
         });
     }
 
+    const handleSubmit = () => {
+        if (values.password !== values.confirmPassword) setError(true)
+        else {
+            setError(false);
+            dispatch(signUp(values));
+        }
+    }
+
     return (
         <div className="signUpForm">
-            <div className="nameContainer">
+            <p className="title">SIGN UP</p>
+            <div className="nameContainer signupInputContainer">
                 <label htmlFor="nameInput">Name</label>
                 <input 
                     type="text"
@@ -32,7 +46,7 @@ export default function SignUpForm() {
                     required
                 />
             </div>
-            <div className="emailContainer">
+            <div className="emailContainer signupInputContainer">
                 <label htmlFor="emailInput">Email</label>
                 <input 
                     type="email"
@@ -44,7 +58,7 @@ export default function SignUpForm() {
                     required
                 />
             </div>
-            <div className="passwordContainer">
+            <div className="passwordContainer signupInputContainer">
                 <label htmlFor="passwordInput">Password</label>
                 <input 
                     type="password"
@@ -56,7 +70,7 @@ export default function SignUpForm() {
                     required
                 />
             </div>
-            <div className="confirmPasswordContainer">
+            <div className="confirmPasswordContainer signupInputContainer">
                 <label htmlFor="confirmPasswordInput">Confirm Password</label>
                 <input 
                     type="password"
@@ -68,6 +82,11 @@ export default function SignUpForm() {
                     required
                 />
             </div>
+            {error && <p className="passwordError">Passwords do not match</p>}
+            <button className="signUpButton" onClick={handleSubmit}>Sign Up</button>
+            <p className="signinNotice">
+                Have an account? <Link to="/signin">Sign In</Link>
+            </p>
         </div>
     );
 }

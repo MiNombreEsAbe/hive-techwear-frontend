@@ -28,7 +28,7 @@ export default function Header() {
 					onChange={handleChange}
 				/>
 				<div className='links'>
-					<Link to='/login' className='signIn'>Sign In</Link>
+					<Link to='/signin' className='signIn'>Sign In</Link>
 					<Link to='/signup' className='signUp'>Sign Up</Link>
 					<Link to='/checkout' className='checkout'><FontAwesomeIcon icon={faBagShopping} /></Link>
 				</div>
