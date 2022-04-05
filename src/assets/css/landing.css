@@ -1,0 +1,43 @@
+html,
+body {
+    height: 100%;
+    font-family: sans-serif;
+}
+
+.banner {
+	position: relative;
+}
+
+.bannerimage {
+	width: 100%;
+	display: block;
+}
+
+.bannermobile {
+	display: none;
+}
+
+.bannertext {
+	top: 20%;
+	left: 10%;
+	position: absolute;
+}
+@media only screen and (max-width: 560px) {
+
+	.bannermobile {
+		display: block;
+		width: 100%;
+	}
+
+	.category-text {
+        font-size: 16px;
+    }
+
+	.bannertext {
+		top: 10%;
+	}
+
+	.bannerimage {
+		display: none;
+	}
+}
