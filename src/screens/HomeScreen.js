@@ -1,14 +1,24 @@
-import React from 'react';
-import { Row, Col, Container } from 'react-bootstrap';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Row, Col } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import Banner from '../assets/images/Banner.png';
 import BannerMobile from '../assets/images/Banner-Mobile.png';
-import Ilk from '../components/cards/Ilk';
 import Loader from '../components/default/Loader';
 import Message from '../components/default/Message';
-import kidneys from '../kidneys';
-
+import CategoryCard from '../components/cards/CategoryCard';
+import Empty from "../components/default/Empty";
+import { fetchCategories } from "../redux/category/operations";
+import { getCategories } from "../redux/category/selectors";
 export function HomeScreen() {
+	const dispatch = useDispatch();
+	const selector = useSelector((state) => state);
+	const categories = getCategories(selector);
+
+    useEffect(() => {
+		dispatch(fetchCategories());
+		// eslint-disable-next-line
+	}, []);
 
     return (
         <div>
@@ -35,33 +45,22 @@ export function HomeScreen() {
 			</div>
             <div className='divcata'>
                 <p className='cata'>Categories</p>
-                <Row className='ilk' size={2}>
-                {kidneys.slice(0,2).map ((kidney) => {
-                    return (
-                    <div>
-                    <Col key={kidney._id} size={2}>
-                      <Ilk kidney={kidney} />
-                    </Col>
+            <Row className='ilk'>
+            {categories.results && categories.results.length > 0 ? (
+                categories.results.map((c, index) => 
+                <CategoryCard key={index} data={c} />)
+                ) : (
+                    <Empty />
+                )
+            }
+          )
+            </Row>
                     </div>
-                )})};
-                <br />
-                {kidneys.slice(2,4).map ((kidney) => {
-                    return (
-                    <div>
-                    <Col key={kidney._id}>
-                      <Ilk kidney={kidney} />
-                    </Col>
+                        <div>
+                            <p className='offer'>Offers</p>
+                        </div>
                     </div>
-                )})};
-                </Row>
-            </div>
-            <div>
-                <p className='offer'>Offers</p>
-            </div>
-        </div>
-        
-                            
-	);
+        );
 }
 
 export default HomeScreen

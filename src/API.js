@@ -36,4 +36,8 @@ export default class API {
     signIn = async body => {};
 
     getItems = async body => {};
+
+    getCategories = () => {
+		return api.get("/categories/");
+	};
 }
