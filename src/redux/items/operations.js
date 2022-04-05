@@ -3,11 +3,11 @@ import { fetchItemsAction } from "./actions";
 
 const api = new API();
 
-export const fetchItems = (data = {}) => {
+export const fetchItems = () => {
     return async dispatch => {
-        return api
-            .getItems(data)
-            .then(res => dispatch(fetchItemsAction(res.data, res.gender, res.clotheType)))
+        return api.getItems()
+            // .then(res => dispatch(fetchItemsAction(res.data, res.gender, res.clotheType)))
+            .then(res => console.log(res))
             .catch(err => console.log(err.response.data))
     }
 }

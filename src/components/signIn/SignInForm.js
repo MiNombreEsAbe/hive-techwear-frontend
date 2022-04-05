@@ -1,10 +1,13 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { signIn } from "../../redux/user/operations";
 import { Link } from "react-router-dom";
 
 export default function SignInForm() {
     const dispatch = useDispatch();
+    const history = useHistory();
+    const selector = useSelector(state => state);
     const initialValues = {
         email: '',
         password: '',
@@ -21,6 +24,8 @@ export default function SignInForm() {
     }
 
     const handleSubmit = () => {
+        dispatch(signIn(values));
+        history.push('/itemlist');
     }
 
     return (

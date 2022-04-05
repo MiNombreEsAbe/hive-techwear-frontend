@@ -19,6 +19,7 @@ const initialState = {
             hats: null
         }
     },
+    categories: null,
     cart: {}
 };
 
