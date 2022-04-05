@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { signUp } from "../../redux/user/operations";
 import { Link } from "react-router-dom";
 
 export default function SignUpForm() {
     const dispatch = useDispatch();
+    const history = useHistory();
     const initialValues = {
         name: '',
         email: '',
@@ -13,6 +15,7 @@ export default function SignUpForm() {
     }
     const [values, setValues] = useState(initialValues);
     const [error, setError] = useState(false);
+    const selector = useSelector(state => state);
 
     const handleChange = e => {
         const { name, value } = e.target;
@@ -28,6 +31,7 @@ export default function SignUpForm() {
         else {
             setError(false);
             dispatch(signUp(values));
+            history.push("/itemlist");
         }
     }
 
