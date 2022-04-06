@@ -10,7 +10,7 @@ import Header from './components/default/Header';
 function App() {
 	return (
 		<BrowserRouter>
-		<Header />
+			<Header />
 			<Router />
 		<Footer />
 		</BrowserRouter>

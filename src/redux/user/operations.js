@@ -21,6 +21,7 @@ export const signUp = (data = {}) => {
         return api
             .signUp(data)
             .then(res => {
+                console.log(res);
                 localStorage.setItem(LOGIN_USER_KEY, JSON.stringify(res));
                 dispatch(signUpAction(res));
             })

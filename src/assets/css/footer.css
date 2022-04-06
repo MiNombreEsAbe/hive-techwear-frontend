@@ -1,5 +1,5 @@
 .footer {
-    padding: 30px 120px 10px 120px;
+    padding: 1vh 2vw 0 2vw;
     display: flex;
     background-color: #373836;
     color: #FFF;
@@ -8,6 +8,7 @@
 }
 
 .footer-main {
+    padding-top: 25px;
     display: flex;
 }
 
@@ -15,9 +16,14 @@
     margin: 0 50px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: baseline;
 }
+
+.footer-container h2 {
+    margin: 0 0 5px 0;
+    font-size: 1.5rem;
+}
+
 .social-svg {
     border-radius: 50%;
     position: absolute;
@@ -36,8 +42,9 @@
 
 .footer-content a {
     text-decoration: none;
-    margin: 18px;
+    margin: 5px;
     color: #FFF;
+    cursor: pointer;
 }
 
 .line {
@@ -46,21 +53,22 @@
 }
 
 .copyright {
+    margin: 0;
+    padding: 10px 0;
     word-spacing: 5px;
-    font-size: 18px;
+    font-size: 15px;
+    border-top: 1px solid #fff;
 }
+
 .social {
-    margin-left: -4%;
+    padding: 1vh 0;
+    display: flex;
+    justify-content: flex-end;
 }
 
-
-@media only screen and (max-width: 1024px) {
-    .copyright {
-        font-size: 12px;
-    }
-    .footer-content a {
-        margin: 12px;
-    }
+.social a {
+    width: 40px !important;
+    height: 40px !important;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -68,7 +76,6 @@
         font-size: 12px;
     }
 }
-
 
 @media only screen and (max-width: 770px) {
     .copyright {

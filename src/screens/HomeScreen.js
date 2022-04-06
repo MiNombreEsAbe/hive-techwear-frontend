@@ -8,20 +8,20 @@ import Loader from '../components/default/Loader';
 import Message from '../components/default/Message';
 import CategoryCard from '../components/cards/CategoryCard';
 import Empty from "../components/default/Empty";
-import { fetchCategories } from "../redux/category/operations";
-import { getCategories } from "../redux/category/selectors";
-export function HomeScreen() {
+import { getCategories } from "../redux/categories/operations";
+import { fetchCategories } from "../redux/categories/selectors";
+
+export function HomeScreen( loading, error ) {
 	const dispatch = useDispatch();
 	const selector = useSelector((state) => state);
-	const categories = getCategories(selector);
+	const categories = fetchCategories(selector);
 
-    useEffect(() => {
-		dispatch(fetchCategories());
-		// eslint-disable-next-line
-	}, []);
+	useEffect(() => {
+		dispatch(getCategories());
 
+	}, [dispatch]);
     return (
-        <div>
+    <div>
         <div className='Banner'>
             <img className='bannerimage' src={ Banner } alt='HiveBanner'/>
             <img className='bannermobile' src={BannerMobile} alt="MobileBanner" />
@@ -47,20 +47,17 @@ export function HomeScreen() {
                 <p className='cata'>Categories</p>
             <Row className='ilk'>
             {categories.results && categories.results.length > 0 ? (
-                categories.results.map((c, index) => 
-                <CategoryCard key={index} data={c} />)
-                ) : (
-                    <Empty />
-                )
-            }
-          )
+				categories.results.map((c, index) => <CategoryCard key={index} data={c} />)
+				) : (
+					<Empty />
+				)}
             </Row>
-                    </div>
-                        <div>
-                            <p className='offer'>Offers</p>
-                        </div>
-                    </div>
-        );
-}
+            </div>
+                <div>
+                    <p className='offer'>Offers</p>
+                </div>
+    </div>
+    )
+};
 
 export default HomeScreen

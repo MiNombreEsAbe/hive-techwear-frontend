@@ -1,24 +1,18 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Card } from 'react-bootstrap'; 
-import PlusIcon from "../../assets/images/plus.svg"
+import React from "react";
+import { Link } from "react-router-dom";
 
+import PlusIcon from "../../assets/images/plus.svg";
 
 export default function CategoryCard(props) {
-    const { id, name, image } = props.data;
-    return (
-        <Card className='kidney'>
-            <Card.Body>
-                <div>
-                    <Link to={`sign-in?categoryId=${id}&categoryName=${name}`} >
-                <Card.Img src={image} alt="here" />
-                <Card.Img src={PlusIcon} alt="there" />
-                    <Card.Title>
-                    {name}
-                    </Card.Title>
-                    </Link>
-                </div>
-            </Card.Body>
-        </Card> 
-    );
+	const { id, name, image } = props.data;
+	return (
+		<Link to={`sign-in?categoryId=${id}&categoryName=${name}`}>
+			<div className="category-items">
+				<img className="category-image" src={image} alt="" />
+				<div className="white-transparent"></div>
+				<img className="category-plus" src={PlusIcon} alt="" />
+				<p className="category-text">{name}</p>
+			</div>
+		</Link>
+	);
 }
