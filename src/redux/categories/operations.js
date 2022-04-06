@@ -6,10 +6,9 @@ const api = new API();
 
 export const getCategories = () => {
     return async dispatch => {
-        return api
+        return await api
             .getCategories()
             .then(res => {
-                console.log(res)
                 dispatch(getCategoriesAction(res));
             })
             .catch(err => {

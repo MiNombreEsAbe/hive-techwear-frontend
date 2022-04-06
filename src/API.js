@@ -16,9 +16,7 @@ api.interceptors.request.use(
         if (config.requireToken) {
             const user = localStorage.getItem(LOGIN_USER_KEY) ? JSON.parse(localStorage.getItem(LOGIN_USER_KEY)) : null;
             config.headers.common['Authorization'] = user.token;
-            console.log(config);
         }
-
 
         return config;
     }, err => console.log(err)
@@ -52,10 +50,9 @@ export default class API {
 
     getCategories = async () => api.get('/categories/');
 
-    getItems = async () => {
-
+    getItems = async data => {
         return api.get('/products/', {
-            data: {},
+            data: data,
             requireToken: true
         });
     };
