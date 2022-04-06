@@ -8,11 +8,14 @@ export default function SignInForm() {
     const dispatch = useDispatch();
     const history = useHistory();
     const selector = useSelector(state => state);
+    const user = selector.user;
     const initialValues = {
         email: '',
         password: '',
     }
     const [values, setValues] = useState(initialValues);
+
+    if (user.id) history.push('/itemlist');
 
     const handleChange = e => {
         const { name, value } = e.target;

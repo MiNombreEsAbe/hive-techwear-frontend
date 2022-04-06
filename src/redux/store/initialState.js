@@ -5,20 +5,7 @@ const initialState = {
             password: null
         }
     },
-    items: {
-        mens: {
-            tshirts: null,
-            shirts: null,
-            bottoms: null,
-            hats: null
-        },
-        womens: {
-            tshirts: null,
-            shirts: null,
-            bottoms: null,
-            hats: null
-        }
-    },
+    items: {},
     categories: null,
     cart: {}
 };

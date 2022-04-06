@@ -12,6 +12,8 @@ export default function ItemList() {
         dispatch(fetchItems());
     }, []);
 
+    console.log(selector)
+
     return (
         <div>Here!</div>
     );

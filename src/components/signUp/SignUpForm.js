@@ -16,6 +16,9 @@ export default function SignUpForm() {
     const [values, setValues] = useState(initialValues);
     const [error, setError] = useState(false);
     const selector = useSelector(state => state);
+    const user = selector.user;
+    
+    if (user.id) history.push('/itemlist');
 
     const handleChange = e => {
         const { name, value } = e.target;
