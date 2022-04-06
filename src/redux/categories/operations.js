@@ -9,7 +9,6 @@ export const getCategories = () => {
         return api
             .getCategories()
             .then(res => {
-                console.log(res)
                 dispatch(getCategoriesAction(res));
             })
             .catch(err => {
