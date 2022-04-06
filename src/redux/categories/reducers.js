@@ -6,10 +6,10 @@ import * as Actions from "./actions";
 export const CategoryReducer = (state = initialState.categories, action) => {
     switch (action.type) {
         case Actions.GET_CATEGORIES:
-            return {
+            return [
                 ...state,
                 ...action.payload.categories
-            };
+            ];
         
         default:
             return state;
