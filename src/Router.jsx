@@ -11,9 +11,6 @@ import { fetchUserFromLocalStorage } from './redux/user/operations';
 
 const Router = () => {
     const dispatch = useDispatch();
-    const selector = useSelector(state => state);
-    const user = selector.user;
-    const token = user.token;
 
     useEffect(() => {
         dispatch(fetchUserFromLocalStorage());

@@ -1,4 +1,4 @@
-import API, { LOGIN_USER_KEY } from "../../API";
+import API from "../../API";
 import { fetchItemsAction } from "./actions";
 
 const api = new API();

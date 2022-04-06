@@ -3,8 +3,7 @@ import {
     signUpAction,
     signUpErrorAction,
     signInAction,
-    signInErrorAction,
-    signOutAction
+    signInErrorAction
 } from './actions';
 
 const api = new API();
