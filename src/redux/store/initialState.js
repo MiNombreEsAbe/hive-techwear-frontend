@@ -6,7 +6,7 @@ const initialState = {
         }
     },
     items: {},
-    categories: null,
+    categories: [],
     cart: {}
 };
 

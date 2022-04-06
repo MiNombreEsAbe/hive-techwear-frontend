@@ -22,6 +22,8 @@ export default function ItemList() {
     const [category, setCategory] = useState("male");
     const [item, setItem] = useState("T-Shirts");
 
+    if (!isLoading) console.log(categories)
+    
     return (
         <div>
 
