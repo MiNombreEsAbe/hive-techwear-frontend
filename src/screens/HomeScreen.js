@@ -4,13 +4,10 @@ import { Row, Col } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import Banner from '../assets/images/Banner.png';
 import BannerMobile from '../assets/images/Banner-Mobile.png';
-import Loader from '../components/default/Loader';
-import Message from '../components/default/Message';
 import CategoryCard from '../components/cards/CategoryCard';
-import Empty from "../components/default/Empty";
 import { getCategories } from "../redux/categories/operations";
 
-export function HomeScreen( loading, error ) {
+export function HomeScreen() {
 	const dispatch = useDispatch();
 	const selector = useSelector((state) => state);
     const categories = selector.categories;
