@@ -34,9 +34,9 @@ export default class API {
     // Will add routes once they're made.
     signUp = async body => {
         const formData = new FormData();
-
+        
         for (const key in body) formData.append(key, body[key]);
-
+        
         return api.post('/users/signup/', formData);
     };
 
@@ -48,7 +48,9 @@ export default class API {
         return api.post('/users/signin/', formData);
     };
 
-    getCategories = async () => api.get('/categories/');
+	getCategories = () => {
+		return api.get("/categories/");
+	};
 
     getItems = async data => {
         return api.get('/products/', {

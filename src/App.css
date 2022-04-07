@@ -2,10 +2,6 @@
     font-family: Sparta;
     src: url('./assets/fonts/Spartan-VariableFont_wght.ttf');
 }
-.con {
-    box-sizing: inherit;
-    display: table-caption;
-}  
 
 #root {
     width: 100%;
