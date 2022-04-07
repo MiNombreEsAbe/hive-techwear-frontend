@@ -40,8 +40,8 @@ export function HomeScreen() {
 					<p>Get Up To 50% off </p>
 					<p>On all products and brands</p>
 					<div className='brandlink'>
-						<Link to={{ pathname: "sign-in", search: 'type=female' }} className='brandw'>Shop Women's</Link>
-						<Link to={{ pathname: "sign-in", search: 'type=male' }} className='brandw'>Shop Men's</Link>
+						<Link to="/female" className='brandw'>Shop Women's</Link>
+						<Link to="/male" className='brandw'>Shop Men's</Link>
 					</div>
 			</div>
             <div className='divcata'>
