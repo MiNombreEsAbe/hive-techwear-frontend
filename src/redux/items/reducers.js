@@ -16,7 +16,6 @@ export const ItemReducer = (state = initialState.items, action) => {
             });
 
             return {
-                ...state,
                 ...resultDict
             }
             

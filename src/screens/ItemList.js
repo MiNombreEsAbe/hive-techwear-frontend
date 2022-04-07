@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { getCategories } from "../redux/categories/operations";
 import { fetchItems } from "../redux/items/operations";
 
-export default function ItemList() {
+export default function ItemList(props) {
     const dispatch = useDispatch();
     const history = useHistory();
     const selector = useSelector(state => state);
@@ -20,13 +20,15 @@ export default function ItemList() {
     }, []);
 
     const [category, setCategory] = useState("male");
-    const [item, setItem] = useState("T-Shirts");
+    const [item, setItem] = useState("");
 
-    if (!isLoading) console.log(categories)
+    if (!isLoading) console.log(items)
     
     return (
         <div>
-
+            {/* {
+                categories.map(cat => <p key={cat.id}>{cat.name}</p>)
+            } */}
         </div>
     );
 }
