@@ -9,17 +9,17 @@ import Message from '../components/default/Message';
 import CategoryCard from '../components/cards/CategoryCard';
 import Empty from "../components/default/Empty";
 import { getCategories } from "../redux/categories/operations";
-import { fetchCategories } from "../redux/categories/selectors";
 
 export function HomeScreen( loading, error ) {
 	const dispatch = useDispatch();
 	const selector = useSelector((state) => state);
-	const categories = fetchCategories(selector);
+    const categories = selector.categories;
+
 
 	useEffect(() => {
 		dispatch(getCategories());
-
-	}, [dispatch]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
     return (
     <div>
         <div className='Banner'>
@@ -45,12 +45,17 @@ export function HomeScreen( loading, error ) {
 			</div>
             <div className='divcata'>
                 <p className='cata'>Categories</p>
-            <Row className='ilk'>
-            {categories.results && categories.results.length > 0 ? (
-				categories.results.map((c, index) => <CategoryCard key={index} data={c} />)
-				) : (
-					<Empty />
-				)}
+            <Row className='ilk' size={2}>
+            {categories.slice( 0, 2 ).map((c, index) => (
+                    <Col key={index}>
+                        <CategoryCard data={c}/>
+                    </Col>
+                                ))}
+            {categories.slice( 2, 4 ).map((c, index) => (
+                    <Col key={index}>
+                        <CategoryCard data={c}/>
+                    </Col>
+                                ))}
             </Row>
             </div>
                 <div>

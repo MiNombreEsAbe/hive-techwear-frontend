@@ -56,6 +56,37 @@ body {
     color: #3a3a3a;
     padding: 10px;
 }
+.imageC {
+	width: 100%;
+	height: auto;
+}
+.carditems {
+	position: relative;
+	cursor: pointer;
+}
+.void {
+	position: absolute;
+	top: 10%;
+	left: 10%;
+	width: 80%;
+	height: 79%;
+	padding: 10px;
+	background-color: rgb(255 255 255 / 50%);
+}
+.plus {
+	position: absolute;
+	width: 15%;
+	right: 10%;
+	top: 10%;
+}
+.nameC {
+	position: absolute;
+	font-size: 32px;
+	font-weight: 500;
+	bottom: 10%;
+	left: 15%;
+	color: #000;
+}
 .divcata {
 	display: flex;
     justify-content: center;
@@ -64,13 +95,11 @@ body {
     align-items: center;
 }
 .ilk {
-	display: flex;
-    flex-wrap: wrap;
-    width: 85%;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-    text-align-last: center;
+	width: 60%;
+	margin: auto;
+	display: grid;
+	grid-gap: 30px;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 .kidney {
 		padding: inherit;
