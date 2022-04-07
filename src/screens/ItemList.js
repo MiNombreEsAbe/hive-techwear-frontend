@@ -22,7 +22,7 @@ export default function ItemList(props) {
     const [category, setCategory] = useState("male");
     const [item, setItem] = useState("");
 
-    if (!isLoading) console.log(items)
+    if (!isLoading) console.log(props.item, props.category)
     
     return (
         <div>
