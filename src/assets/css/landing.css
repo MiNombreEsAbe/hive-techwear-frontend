@@ -105,7 +105,7 @@ body {
 		padding: inherit;
 		margin-bottom: 38px;
 }
-.offer {
+.offerT {
 	position: relative;
     font-size: 32px;
     font-weight: 500;
@@ -120,6 +120,84 @@ body {
     color: white;
 	text-underline-position: below !important;
 	font-weight: bold !important;
+}
+
+.divoff {
+	padding: 20px;
+	margin-bottom: 60px;
+}
+.offers {
+	width: 70%;
+	margin: auto;
+	display: grid;
+	grid-gap: 100px 50px;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.itemsO {
+	position: relative;
+	cursor: pointer;
+}
+
+.imageO {
+	width: 100%;
+	height: auto;
+	border-radius: 18px;
+	box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.offerTx {
+	top: 21%;  
+	left: 50%;
+	width: 100%;
+	font-size: 40px;
+	transform:translate(-50%,-5%);
+	margin: auto;
+	position: absolute;
+	color: rgba(255, 255, 255, 0.8);
+	text-align: center;
+}
+
+.offer-text p:first-child {
+	font-size: 42px;
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+
+.offer-text p:nth-child(2) {
+	margin-top: 5px;
+	font-size: 30px;
+	font-weight: 600;
+}
+
+.obtn {
+	top: 90%;  
+	left: 50%;
+	transform:translate(-50%,-90%);
+	margin: auto;
+	position: absolute;
+	border-radius: 4px;
+	font-size: 24px;
+	padding: 10px 20px;
+	color: #fff;
+	cursor: pointer;
+	border: 1px solid transparent;
+}
+
+.o-001 {
+	background-color: #a07d69;
+}
+
+.o-002 {
+	background-color: #96381f;
+}
+
+.o-003 {
+	background-color: #eeb13d;
+}
+
+.o-004 {
+	background-color: #c3d7c8;
 }
 @media only screen and (max-width: 1024px) {
     .category-text {
