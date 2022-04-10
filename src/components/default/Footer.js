@@ -28,7 +28,7 @@ export function Footer () {
       </div>
       <p className="copyright">
         Copyright © 2022 HIVE TechWear. All rights reserved. <Link to="/policy">Privacy Policy</Link> | <Link to='/terms'>Term
-        of Use Sales Policy</Link> | <Link to='/legal'>Legal</Link> | <Link to='/robots.txt'>Site Map</Link>
+        of Use</Link> | <Link to='/legal'>Legal</Link> | <Link to='/robots.txt'>Site Map</Link>
       </p>
     </footer>
   );
