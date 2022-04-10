@@ -14,6 +14,7 @@ const Router = () => {
 
     useEffect(() => {
         dispatch(fetchUserFromLocalStorage());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
@@ -26,6 +27,12 @@ const Router = () => {
             <Route exact path={"/signup"} component = { SignUp }/>
             <Route exact path={"/signin"} component = { SignIn }/>
             <Route exact path={"/itemlist"} component = { ItemList } />
+            <Route exact path={"/male"} render={(props) => <ItemList {...props} category="male" />} />
+            <Route exact path={"/female"} render={(props) => <ItemList {...props} category="female" />} />
+            <Route exact path={"/tshirts"} render={(props) => <ItemList {...props} item="T-Shirts" />} />
+            <Route exact path={"/shirts"} render={(props) => <ItemList {...props} item="Shirts" />} />
+            <Route exact path={"/bottoms"} render={(props) => <ItemList {...props} item="Bottoms" />} />
+            <Route exact path={"/hats"} render={(props) => <ItemList {...props} item="Hats" />} />
         </Switch>
     );
 };
