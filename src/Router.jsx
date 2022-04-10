@@ -6,7 +6,7 @@ import SignUp from './screens/SignUp';
 import SignIn from './screens/SignIn';
 import ItemList from './screens/ItemList';
 import { ContactUs } from './components/contactUs/ContactUs';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import { fetchUserFromLocalStorage } from './redux/user/operations';
 
 const Router = () => {

@@ -5,6 +5,7 @@
     left: 0;
     right: 0;
     display: flex;
+    flex-wrap: wrap;
     background-color: #fff;
     align-items: center;
     justify-content: space-between;
@@ -46,4 +47,31 @@
 
 .header .rightPortion .links a.checkout {
     font-size: 20px;
+}
+
+@media (max-width: 748px) {
+    .header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .header .logo {
+        width: 80px;
+    }
+    .nameC {
+        font-size: 12px;
+    }
+    .header .rightPortion {
+            display: flex;
+            align-items: stretch;
+    }
+    .header .rightPortion .searchbar {
+        margin-right: 20px;
+        padding: 5px 10px;
+        border-radius: 10px;
+        border: none;
+        background-color: #373836;
+        color: #fff;
+        width: 55%;
+    }
 }
