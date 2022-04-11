@@ -34,7 +34,7 @@ export default function SignUpForm() {
         else {
             setError(false);
             dispatch(signUp(values));
-            history.push("/itemlist");
+            history.push("/");
         }
     }
 

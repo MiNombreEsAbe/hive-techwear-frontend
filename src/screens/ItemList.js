@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import ReactPaginate from "react-paginate";
 
 import { getCategories } from "../redux/categories/operations";
@@ -12,6 +13,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 export default function ItemList(props) {
     const dispatch = useDispatch();
+    const history = useHistory();
     const selector = useSelector(state => state);
     const items = selector.items;
 
@@ -62,8 +64,7 @@ export default function ItemList(props) {
 
     const handleAdd = item => dispatch(addItem(item));
     
-
-    console.log(filteredItems)
+    if (!selector.user.id) history.push('/signin');
     
     return (
         <div className="itemList">

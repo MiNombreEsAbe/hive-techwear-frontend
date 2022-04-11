@@ -56,3 +56,9 @@
 .signUpForm .signinNotice a {
     cursor: pointer;
 }
+
+@media (max-width: 650px) {
+    .signInForm {
+        width: 50%;
+    }
+}
