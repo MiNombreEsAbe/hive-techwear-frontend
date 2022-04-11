@@ -1,0 +1,48 @@
+.itemList {
+    height: auto;
+    padding: 6rem 1rem 1rem;
+    display: flex;
+}
+
+.itemList .items {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.itemList .items .item {
+    width: 33.333333%;
+    padding: 1rem;
+    flex-basis: 33.333333%;
+}
+
+.itemList .items .item img {
+    width: 100%;
+}
+
+.itemList .items .item p {
+    margin: 5px 0;
+}
+
+.itemList .items .item .prodName {
+    font-size: 1.25rem;
+}
+
+.itemList .items .item .prodDesc {
+    font-size: 0.75rem;
+}
+
+.itemList .items .item .priceAndAdd {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.itemList .items .item .priceAndAdd button {
+    padding: 5px 10px;
+    font-size: 1rem;
+    background-color: #373836;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
