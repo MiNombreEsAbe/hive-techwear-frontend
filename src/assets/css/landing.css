@@ -106,12 +106,16 @@ body {
 		margin-bottom: 38px;
 }
 .offerT {
-	position: relative;
+    position: relative;
     font-size: 32px;
     font-weight: 500;
     bottom: 10%;
-    left: 15%;
     color: #3a3a3a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
 }
 
 .brand a {
@@ -158,13 +162,13 @@ body {
 	text-align: center;
 }
 
-.offer-text p:first-child {
+.offerTx p:first-child {
 	font-size: 42px;
 	font-weight: 700;
 	margin-bottom: 10px;
 }
 
-.offer-text p:nth-child(2) {
+.offerTx p:nth-child(2) {
 	margin-top: 5px;
 	font-size: 30px;
 	font-weight: 600;
@@ -200,7 +204,7 @@ body {
 	background-color: #c3d7c8;
 }
 @media only screen and (max-width: 1024px) {
-    .category-text {
+    .nameC {
         font-size: 18px;
     }
 
@@ -224,9 +228,27 @@ body {
 	.bannertxt3 {
 		font-size: 20px;
 	}
+
+	
+	.offerTx p:first-child {
+		font-size: 14px;
+		font-weight: 700;
+		margin-bottom: 10px;
+	}
+	
+	.offerTX p:nth-child(2) {
+		margin-top: 5px;
+		font-size: 12px;
+		font-weight: 600;
+	}
+	
+	.obtn {
+		font-size: 12px;
+		padding: 10px 4px;
+	}
 }
 @media only screen and (max-width: 820px) {
-    .category-text {
+    .nameC {
         font-size: 24px;
     }
 
@@ -254,8 +276,27 @@ body {
 	.bannertxt3 {
 		font-size: 15px;
 	}
+
+
+	.offerTx p:first-child {
+		font-size: 14px;
+	}
+
+	.offerTx p:nth-child(2) {
+		margin-top: 5px;
+		font-size: 12px;
+		font-weight: 600;
+	}
 }
 @media only screen and (max-width: 730px) {
+	body {
+		font-size: 1.0rem;
+		font-weight: 400;
+		line-height: 1;
+		color: #343a40;
+		text-align: left;
+		background-color: #fff;
+	}
 	.landing-container {
 		margin: 40px 100px;
 	}
@@ -266,7 +307,7 @@ body {
 
 	.bannertext {
 		left: 5%;
-		top: 25%;
+		top: 7%;
 	}
 
 	.bannertxt1 {
@@ -279,6 +320,31 @@ body {
 
 	.bannertxt3 {
 		font-size: 15px;
+	}
+
+	.brand {
+		height: 150px;
+	}
+
+	.brand p {
+		font-size: 18px;
+		margin: 0;
+	}
+
+	.brand a {
+		font-size: 14px;
+	}
+	.kidney {
+		padding: inherit;
+		margin-bottom: 38px;
+		width: 200%;
+	}
+	.ilk {
+		width: 60%;
+		margin-left: 35px;
+		display: grid;
+		grid-gap: 64px;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
 }
 @media only screen and (max-width: 560px) {
@@ -298,5 +364,33 @@ body {
 
 	.bannerimage {
 		display: none;
+	}
+	
+	.category {
+		grid-gap: 30px;
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+	}
+
+	.offers {
+		width: 100%;
+		grid-gap: 30px 0px;
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+	}
+	
+	.offerTx p:first-child {
+		font-size: 18px;
+	}
+
+	.offerTx p:nth-child(2) {
+		font-size: 14px;
+	}
+
+	.obtn {
+		font-size: 14px;
+		padding: 12px 20px;
+	}
+
+	.brand a {
+		padding: 0 18px;
 	}
 }
