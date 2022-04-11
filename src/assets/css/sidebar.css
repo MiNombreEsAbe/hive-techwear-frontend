@@ -11,8 +11,8 @@
 
 .sidebar .itemChoosers {
     margin-top: 15px;
-    padding-right: 10px;
-    border-right: 2px solid #373836;
+    /* padding-right: 10px;
+    border-right: 2px solid #373836; */
     display: flex;
     flex-direction: column;
 }
