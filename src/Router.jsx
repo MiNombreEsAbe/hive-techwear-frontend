@@ -8,6 +8,8 @@ import ItemList from './screens/ItemList';
 import { ContactUs } from './components/contactUs/ContactUs';
 import { useDispatch} from 'react-redux';
 import { fetchUserFromLocalStorage } from './redux/user/operations';
+import Thankyou from './screens/Thankyou';
+import ItemDetails from './screens/ItemDetails';
 
 const Router = () => {
     const dispatch = useDispatch();
@@ -33,6 +35,8 @@ const Router = () => {
             <Route exact path={"/shirts"} render={(props) => <ItemList {...props} item="Shirts" />} />
             <Route exact path={"/bottoms"} render={(props) => <ItemList {...props} item="Bottoms" />} />
             <Route exact path={"/hats"} render={(props) => <ItemList {...props} item="Hats" />} />
+            <Route exact path={"/checkout"} component={ItemDetails} />
+            <Route exact path={"/thankyou"} component={Thankyou} />
         </Switch>
     );
 };

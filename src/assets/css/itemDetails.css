@@ -1,0 +1,87 @@
+.itemDetailsPage {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.itemDetailsPage .itemDetailsContent {
+    width: 30%;
+    margin-top: 7rem;
+}
+
+.itemDetailsPage .itemDetailsContent .headerText p {
+    margin: 5px 0;
+}
+
+.itemDetailsPage .itemDetailsContent .headerText .title {
+    font-size: 2rem;
+}
+
+.itemDetailsPage .itemDetailsContent .headerText .subtitle {
+    font-size: 1rem;
+}
+
+.itemDetailsPage .itemDetailsContent table {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.itemDetailsPage .itemDetailsContent table tr td {
+    padding: 5px 0;
+    color: #353535;
+}
+
+.itemDetailsPage .itemDetailsContent table tr:nth-last-child(2) {
+    border-bottom: 2px solid #707070;
+}
+
+.itemDetailsContent .form {
+    margin: 5px 0 15px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.itemDetailsContent .form div {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.itemDetailsContent .form div label {
+    margin-bottom: 5px;
+}
+
+.itemDetailsContent .form div input {
+    padding: 5px 10px;
+    background-color: #EAEAEA;
+    border: none;
+    border-radius: 3px;
+}
+
+.itemDetailsContent .form button {
+    margin-top: 15px;
+    padding: 5px 0;
+    background-color: #373836;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+}
+
+@media (max-width: 900px) {
+    .itemDetailsPage .itemDetailsContent {
+        width: 50%;
+    }
+}
+
+@media (max-width: 600px) {
+    .itemDetailsPage .itemDetailsContent {
+        width: 65%;
+    }
+}
+
+@media (max-width: 500px) {
+    .itemDetailsPage .itemDetailsContent {
+        width: 75%;
+    }
+}
