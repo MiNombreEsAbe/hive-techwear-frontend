@@ -7,6 +7,7 @@
     padding: 5px 10px;
     background-color: #373836;
     color: #fff;
+    cursor: pointer;
 }
 
 .sidebar .itemChoosers {
@@ -31,4 +32,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+@media (max-width: 650px) {
+    .sidebar {
+        width: 30%;
+    }
+}
+
+@media (max-width: 350px) {
+    .sidebar .itemChoosers button {
+        padding: 5px;
+    }
 }

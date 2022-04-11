@@ -42,7 +42,12 @@
 }
 
 .header .rightPortion .links a.signUp {
-    margin: 0 20px;
+    margin: 0;
+}
+
+.header .rightPortion .links a.signIn,
+.header .rightPortion .links a.signOut {
+    margin-right: 20px;
 }
 
 .header .rightPortion .links a.checkout {
@@ -62,8 +67,8 @@
         font-size: 12px;
     }
     .header .rightPortion {
-            display: flex;
-            align-items: stretch;
+        display: flex;
+        align-items: center;
     }
     .header .rightPortion .searchbar {
         margin-right: 20px;
@@ -73,5 +78,44 @@
         background-color: #373836;
         color: #fff;
         width: 55%;
+    }
+}
+
+@media (max-width: 650px) {
+    .header .rightPortion {
+        width: 80%;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 450px) {
+    .header .rightPortion {
+        width: 65%;
+        justify-content: flex-end;
+    }
+
+    .header .rightPortion .links a {
+        font-size: 15px;
+    }
+
+    .header .rightPortion .searchbar {
+        width: 35%;
+        margin-right: 10px;
+    }
+
+    .header .rightPortion .links a.signIn,
+    .header .rightPortion .links a.signOut {
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 350px) {
+    .header .logo {
+        width: 55px;
+    }
+
+    .header .rightPortion {
+        width: 75%;
     }
 }
