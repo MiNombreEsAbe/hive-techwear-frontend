@@ -1,0 +1,34 @@
+.sidebar {
+    width: 20%;
+}
+
+.sidebar select {
+    width: 100%;
+    padding: 5px 10px;
+    background-color: #373836;
+    color: #fff;
+}
+
+.sidebar .itemChoosers {
+    margin-top: 15px;
+    padding-right: 10px;
+    border-right: 2px solid #373836;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .itemChoosers .name {
+    width: auto;
+    margin: 0 0 5px;
+    font-size: 20px;
+}
+
+.sidebar .itemChoosers button {
+    color: #373836;
+    background-color: #fff;
+    border: none;
+    border-bottom: 2px solid #707070;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
