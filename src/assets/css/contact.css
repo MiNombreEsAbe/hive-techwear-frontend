@@ -33,7 +33,7 @@
     box-sizing: inherit;
     display: table-caption;
 }
-@media only screen and (max-width: 450px) {
+/* @media only screen and (max-width: 450px) {
     body {
         width: 115%;
     }
@@ -42,4 +42,4 @@
     body {
         width: 170%;
     }
-}
+} */
