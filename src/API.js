@@ -15,7 +15,8 @@ api.interceptors.request.use(
     config => {
         if (config.requireToken) {
             const user = localStorage.getItem(LOGIN_USER_KEY) ? JSON.parse(localStorage.getItem(LOGIN_USER_KEY)) : null;
-            config.headers.common['Authorization'] = user.token;
+            console.log(user)
+            config.headers.common['Authorization'] = JSON.stringify({'token':user.token, 'id': user.id});
         }
 
         return config;
@@ -58,4 +59,24 @@ export default class API {
             requireToken: true
         });
     };
+
+    getCart = async () => {
+        return api.get('/cart/', {
+            requireToken: true
+        });
+    }
+
+    addCart = async data => {
+        return api.post('/cart/add/', {
+            data: data,
+            requireToken: true
+        })
+    }
+
+    updateCart = async (data, id) => {
+        return api.put(`/cart/update/${id}`, {
+            data: data,
+            requireToken: true
+        })
+    }
 }
