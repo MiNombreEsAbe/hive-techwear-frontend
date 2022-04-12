@@ -17,7 +17,7 @@ api.interceptors.request.use(
             const user = localStorage.getItem(LOGIN_USER_KEY) ? JSON.parse(localStorage.getItem(LOGIN_USER_KEY)) : null;
             config.headers.common['Authorization'] = user.token;
         }
-
+            console.log()
         return config;
     }, err => console.log(err)
 );
@@ -58,4 +58,26 @@ export default class API {
             requireToken: true
         });
     };
+    getCart = async data => {
+        return api.get('/cart/', {
+            data: data,
+            requireToken: true
+        });
+	};
+
+	addCart = async body => {
+        const formData = new FormData();
+
+        for (const key in body) formData.append(key, body[key]);
+
+        return api.post('/cart/add/', formData);
+	};
+
+	updateCart = (updateCartBody, cartId) => {
+		const formData = new FormData();
+		for (const key in updateCartBody) {
+			formData.append(key, updateCartBody[key]);
+		}
+		return api.put(`/cart/update/${cartId}/`, formData, { requireToken: true });
+	};
 }

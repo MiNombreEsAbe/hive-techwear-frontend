@@ -5,7 +5,7 @@ import { FillerText } from './screens/FillerText';
 import SignUp from './screens/SignUp';
 import SignIn from './screens/SignIn';
 import ItemList from './screens/ItemList';
-import CartScreen from './screens/CartScreen';
+import { Cart } from './screens/Cart';
 import { ContactUs } from './components/contactUs/ContactUs';
 import { useDispatch} from 'react-redux';
 import { fetchUserFromLocalStorage } from './redux/user/operations';
@@ -29,7 +29,7 @@ const Router = () => {
             <Route exact path={"/terms"} component = { FillerText }/>
             <Route exact path={"/signup"} component = { SignUp }/>
             <Route exact path={"/signin"} component = { SignIn }/>
-            <Route exact path={'/cart'} component = { CartScreen }/>
+            <Route exact path={'/cart'} component = { Cart }/>
             <Route exact path={"/itemlist"} component = { ItemList } />
             <Route exact path={"/male"} render={(props) => <ItemList {...props} category="male" />} />
             <Route exact path={"/female"} render={(props) => <ItemList {...props} category="female" />} />

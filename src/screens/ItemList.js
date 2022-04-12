@@ -20,6 +20,7 @@ export default function ItemList(props) {
     useEffect(() => {
         dispatch(getCategories());
         dispatch(fetchItems());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const chosenCat = props.category || "male";
@@ -33,7 +34,7 @@ export default function ItemList(props) {
     const chosenItem = props.item || "T-Shirts";
     const [item, setItem] = useState(chosenItem);
     const itemChange = clickedItem => setItem(clickedItem);
-
+    
     const bothLoaded = items.hasOwnProperty(category) && items[category].hasOwnProperty(item);
 
     const filteredItems = (

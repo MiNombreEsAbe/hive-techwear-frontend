@@ -5,7 +5,7 @@ import PlusIcon from "../../assets/images/plus.svg"
 
 
 export default function CategoryCard(props) {
-    const { id, name, image } = props.data;
+    const { name, image } = props.data;
     const urlDict = {
         "T-Shirts": "/tshirts",
         "Shirts": "/shirts",
