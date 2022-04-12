@@ -45,8 +45,8 @@ export default function Header() {
 				<div className='links'>
 					{user.id ? (
 						<>
-							<Link to='/signout' className='signUp' onClick={handleSignout}>Sign Out</Link>
-							<Link to='/checkout' className='checkout'><FontAwesomeIcon icon={faBagShopping} /></Link>
+							<Link to='/signout' className='signUp signOut' onClick={handleSignout}>Sign Out</Link>
+							<Link to='/cart' className='checkout'><FontAwesomeIcon icon={faBagShopping} /></Link>
 						</>
 					) : (
 						<>

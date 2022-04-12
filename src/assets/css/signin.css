@@ -56,3 +56,15 @@
 .signInForm .signinNotice a {
     cursor: pointer;
 }
+
+@media (max-width: 650px) {
+    .signInForm {
+        width: 50%;
+    }
+}
+
+/* @media (max-width: 450px) {
+    .signInForm {
+        width: 50%;
+    }
+} */

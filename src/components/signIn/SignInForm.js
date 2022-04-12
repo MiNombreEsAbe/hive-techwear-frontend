@@ -28,7 +28,7 @@ export default function SignInForm() {
 
     const handleSubmit = () => {
         dispatch(signIn(values));
-        history.push('/itemlist');
+        history.push('/');
     }
 
     return (

@@ -11,7 +11,7 @@ export function Footer () {
           <div className="footer-content">
             <Link to="/signup">Sign up</Link>
             <Link to="/signin">Sign in</Link>
-            <Link to="/itemlists">Item Lists</Link>
+            <Link to="/itemlist">Item Lists</Link>
           </div>
         </div>
         <div className="footer-container">
