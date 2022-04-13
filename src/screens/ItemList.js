@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import ReactPaginate from "react-paginate";
 
 import { getCategories } from "../redux/categories/operations";
+import { getCart } from "../redux/cart/operations";
 import { fetchItems } from "../redux/items/operations";
 import { addItem } from "../redux/cart/operations";
 import Sidebar from "../components/itemList/Sidebar";
@@ -20,6 +21,7 @@ export default function ItemList(props) {
     useEffect(() => {
         dispatch(getCategories());
         dispatch(fetchItems());
+        dispatch(getCart());
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 

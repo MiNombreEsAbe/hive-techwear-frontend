@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
-import { fetchCart } from '../redux/cart/operations';
+import { getCart } from '../redux/cart/operations';
 import CartCard from '../components/cart/CartCard';
 
 export function Cart() {
@@ -12,7 +12,7 @@ export function Cart() {
 	const isEmpty = carts && carts.length > 0 ? false : true;
 
 	useEffect(() => {
-		dispatch(fetchCart());
+		dispatch(getCart());
 		// eslint-disable-next-line
 	}, []);
 	return (

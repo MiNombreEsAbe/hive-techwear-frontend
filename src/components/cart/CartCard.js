@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { useDispatch } from "react-redux";
-import CartIcon from "../../assets/images/cart.png";
 import { addItem, removeItem } from "../../redux/cart/operations";
 
 export default function CartCard(props) {
-	const { name, description, price } = props.cart.product;
+	const { name, description, price } = props.cart.item;
 	let quantity = props.cart.quantity;
+	let image = props.cart.image;
 	const cartId = props.cart.id;
 	const dispatch = useDispatch();
 	const [openModalRemoveCart, setOpenModalRemoveCart] = useState(false);
@@ -26,7 +26,7 @@ export default function CartCard(props) {
 	return (
 		<>
 			<div className="cart-card">
-				<img className="cart-image" src={CartIcon} alt="cart-item" />
+				<img className="cart-image" src={image} alt="cart-item" />
 				<div className="cart-content">
 					<p className="cart-title">{name}</p>
 					<p className="cart-description">{description}</p>

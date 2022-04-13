@@ -1,16 +1,21 @@
 // This file contains the operations for Cart
-import API from "../../API";
-import { addItemAction, removeItemAction, clearCartsAction, fetchCartAction, updateCartAction  } from './actions';
+import { addItemAction, removeItemAction, updateCartAction, clearCartsAction } from './actions';
+import API from '../../API';
+
 const api = new API();
 
-
-export const fetchCart = (data = {}) => {
+export const getCart = (data = {}) => {
     return async dispatch => {
-        return await api.getCart(data)
-            .then(res => dispatch(fetchCartAction(res)))
-            .catch(err => console.log(err.response.data))
-    };
-};
+        return await api
+            .getCart(data)
+            .then(res => {
+                console.log(res)
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
+}
 
 export const addItem = body => {
 	return async (dispatch) => {
