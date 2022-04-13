@@ -5,45 +5,44 @@ import * as Actions from "./actions";
 
 export const CartReducer = (state = initialState.cart, action) => {
     switch (action.type) {
+        case Actions.GET_CART:
+            return [...action.payload.cart]
+
         case Actions.ADD_ITEM:
-            let addItem = action.payload.item;
-
-            if (state[addItem.id]) {
-                const newCount = state[addItem.id].count + 1;
-
-                return {
-                    ...state,
-                    [addItem.id]: {
-                        ...state[addItem.id],
-                        count: newCount
-                    } 
-                };
-            };
-
-            addItem.count = 1;
-
-            return {
+            return [
                 ...state,
-                [addItem.id]: addItem
-            };
-        
-        case Actions.REMOVE_ITEM:
-            let removeItem = action.payload.item;
-            const newCount = state[removeItem.id].count - 1;
+                action.payload.item
+            ]
 
-            if (newCount === 0) {
-                const newState = {...state};
-                delete newState[removeItem.id];
-                return { newState };
+        case Actions.UPDATE_ITEM:
+            const newState = [...state];
+            
+            for(let i = 0; i < newState.length; i++) {
+                if(newState[i]['id'] === action.payload.item.id) {
+                    newState.splice(i, 1, action.payload.item);
+                    break;
+                }
             }
 
-            return {
-                ...state,
-                [removeItem.id]: {
-                    ...state[removeItem.id],
-                    count: newCount
-                }
-            };
+            return newState;
+        
+        // case Actions.REMOVE_ITEM:
+        //     let removeItem = action.payload.item;
+        //     const newCount = state[removeItem.id].count - 1;
+
+        //     if (newCount === 0) {
+        //         const newState = {...state};
+        //         delete newState[removeItem.id];
+        //         return { newState };
+        //     }
+
+        //     return {
+        //         ...state,
+        //         [removeItem.id]: {
+        //             ...state[removeItem.id],
+        //             count: newCount
+        //         }
+        //     };
     
         default:
             return state;
