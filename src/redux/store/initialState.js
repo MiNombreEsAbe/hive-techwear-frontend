@@ -7,7 +7,7 @@ const initialState = {
     },
     items: {},
     categories: [],
-    cart: {}
+    cart: []
 };
 
 export default initialState;

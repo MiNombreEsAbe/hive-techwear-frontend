@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import ReactPaginate from "react-paginate";
 
 import { getCategories } from "../redux/categories/operations";
-import { getCart } from "../redux/cart/operations";
+import { getCart, updateItem } from "../redux/cart/operations";
 import { fetchItems } from "../redux/items/operations";
 import { addItem } from "../redux/cart/operations";
 import Sidebar from "../components/itemList/Sidebar";
@@ -17,6 +17,10 @@ export default function ItemList(props) {
     const history = useHistory();
     const selector = useSelector(state => state);
     const items = selector.items;
+    const cart = selector.cart;
+    let itemCount = {};
+
+    console.log(cart)
 
     useEffect(() => {
         dispatch(getCategories());
@@ -64,7 +68,32 @@ export default function ItemList(props) {
         setCurrentPage(selectedPage);
     }
 
-    const handleAdd = item => dispatch(addItem(item));
+    const handleAdd = item => {
+        let itemExists = false;
+        let existingItem;
+
+        for(let i = 0; i < cart.length; i++) {
+            if(cart[i]['product']['id'] === item['id']) {
+                itemExists = true;
+                existingItem = cart[i];
+                break
+            }
+        }
+
+        if (itemExists) {
+            const reqData = {
+                quantity: existingItem.quantity + 1
+            }
+
+            dispatch(updateItem(reqData, existingItem['id']))
+        } else {
+            const reqData = {
+                product: item['id'],
+                quantity: 1
+            }
+            dispatch(addItem(reqData))
+        }
+    };
     
     if (!selector.user.id) history.push('/signin');
     
