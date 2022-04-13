@@ -25,8 +25,8 @@ api.interceptors.request.use(
 api.interceptors.response.use(
     res => res.data,
     err => {
-        // if (err.response.status === 401) localStorage.removeItem(LOGIN_USER_KEY);
-		// return Promise.reject(err);
+        if (err.response.status === 401) localStorage.removeItem(LOGIN_USER_KEY);
+		return Promise.reject(err);
     }
 );
 
