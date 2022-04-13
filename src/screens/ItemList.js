@@ -16,10 +16,7 @@ export default function ItemList(props) {
     const history = useHistory();
     const selector = useSelector(state => state);
     const items = selector.items;
-    const carts = selector.cart;
-    let itemCount = {};
-
-    console.log(carts)
+    const cart = selector.cart;
 
     useEffect(() => {
         dispatch(getCategories());
@@ -72,10 +69,10 @@ export default function ItemList(props) {
         let itemExists = false;
         let existingItem;
 
-        for(let i = 0; i < carts.length; i++) {
-            if(carts[i]['product']['id'] === item['id']) {
+        for(let i = 0; i < cart.length; i++) {
+            if(cart[i]['product']['id'] === item['id']) {
                 itemExists = true;
-                existingItem = carts[i];
+                existingItem = cart[i];
                 break
             }
         }

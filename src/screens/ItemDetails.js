@@ -1,15 +1,21 @@
-import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
+
+import { getCart } from "../redux/cart/operations";
 
 export default function ItemDetails() {
     const history = useHistory();
+    const dispatch = useDispatch();
     const selector = useSelector(state => state);
     const cart = selector.cart;
-    const itemIds = Object.keys(cart);
 
-    let totalCount = 0
-    let totalPrice = 0
+    useEffect(() => {
+        dispatch(getCart());
+    }, []);
+
+    let totalCount = 0;
+    let totalPrice = 0;
 
     const initialValues = {
         name: '',
@@ -57,21 +63,21 @@ export default function ItemDetails() {
                         <th>Unit Price</th>
                     </tr>
                     {
-                        itemIds.map(id => {
-                            totalCount += parseInt(cart[id]['count']);
-                            totalPrice += parseFloat(cart[id]['price']);
+                        cart.map(item => {
+                            totalCount += item['quantity'];
+                            totalPrice += item['total_price'];
 
                             return (
-                                <tr key={id}>
+                                <tr key={item['id']}>
                                     <td>
                                         {
-                                            cart[id]['name'].length > 20 ?
-                                            `${cart[id]['name'].slice(0, 20)}...` :
-                                            cart[id]['name']
+                                            item['product']['name'].length > 20 ?
+                                            `${item['product']['name'].slice(0, 20)}...` :
+                                            item['product']['name']
                                         }
                                     </td>
-                                    <td>{cart[id]['count']}</td>
-                                    <td>${cart[id]['price']}</td>
+                                    <td>{item['quantity']}</td>
+                                    <td>${item['product']['price']}</td>
                                 </tr>
                             );
                         })
