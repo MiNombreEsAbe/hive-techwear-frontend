@@ -18,9 +18,6 @@ export default function ItemList(props) {
     const selector = useSelector(state => state);
     const items = selector.items;
     const cart = selector.cart;
-    let itemCount = {};
-
-    console.log(cart)
 
     useEffect(() => {
         dispatch(getCategories());
