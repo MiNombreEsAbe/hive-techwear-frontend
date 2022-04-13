@@ -1,28 +1,31 @@
-import React, { useState } from "react";
-import ReactDOM from "react-dom";
-import { useDispatch } from "react-redux";
-import { addItem, removeItem } from "../../redux/cart/operations";
+import React, { useState, useEffect } from "react";
+import { Col, Form } from 'react-bootstrap';
+import { fetchItems } from "../../redux/items/operations";
+import { useDispatch, useSelector } from "react-redux";
+import { getCart } from '../../redux/cart/operations';
+import { updateItem } from "../../redux/cart/operations";
 
 export default function CartCard(props) {
-	const { name, description, price } = props.cart.item;
+	const { name, description, price } = props.cart.product;
 	let quantity = props.cart.quantity;
 	let image = props.cart.image;
-	const cartId = props.cart.id;
 	const dispatch = useDispatch();
-	const [openModalRemoveCart, setOpenModalRemoveCart] = useState(false);
+	const selector = useSelector(state => state);
+	
+	const item = selector.items;
+	const carts = selector.cart;
+	const id = props.cart.id;
+	const updateHandler = i => {
 
-	const increaseCart = () => {
-		++quantity;
-		dispatch(addItem({ quantity }, cartId));
-	};
-
-	const decreaseCart = () => {
-		--quantity;
-		if (quantity < 1) {
-			setOpenModalRemoveCart(true);
-		}
-		dispatch(removeItem({ quantity }, cartId));
-	};
+		const quantity = Number (i.target.value);
+		dispatch(updateItem(quantity, id));
+   };
+   useEffect(() => {
+	dispatch(fetchItems());
+	dispatch(getCart());
+// eslint-disable-next-line react-hooks/exhaustive-deps
+}, []);
+   
 	return (
 		<>
 			<div className="cart-card">
@@ -34,52 +37,14 @@ export default function CartCard(props) {
 				<div className="price-content">
 					<p className="cart-price">${price}</p>
 					<div className="added-cart">
-						<span onClick={decreaseCart}> - </span>
-						<span className="margin-top-4"> {quantity} </span>
-						<span onClick={increaseCart} className="margin-top-4">
-							+
-						</span>
+					<Col md={3} className='size'>
+					<input
+                        onBlur={updateHandler} defaultValue={quantity}
+                     />
+                    </Col>
 					</div>
 				</div>
 			</div>
-			{openModalRemoveCart
-				? ReactDOM.createPortal(
-						<div id="custom-modal" className={`custom-modal ${openModalRemoveCart ? "" : "modal-hide"}`}>
-							<div
-								id="custom-modal-close"
-								onClick={() => setOpenModalRemoveCart(false)}
-								className="custom-modal--bg"
-							></div>
-							<div className="custom-modal--container">
-								<div className="custom-modal--content">
-									<div className="modal-content">
-										<strong>
-											You are about to remove this item from your cart. Are you sure ?
-										</strong>
-										<div>
-											<button
-												className="custom-btn mr-1 pl-6 pr-6"
-												onClick={(e) => {
-													dispatch(removeItem(cartId));
-													setOpenModalRemoveCart(false);
-												}}
-											>
-												Yes
-											</button>
-											<button
-												className="custom-btn ml-1 pl-6 pr-6"
-												onClick={() => setOpenModalRemoveCart(false)}
-											>
-												No
-											</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>,
-						document.getElementById("portal-root")
-				  )
-				: ""}
 		</>
 	);
 }

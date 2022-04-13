@@ -1,20 +1,25 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Button } from 'react-bootstrap';
 import { useHistory } from 'react-router';
+import { fetchItems } from "../redux/items/operations";
 import { getCart } from '../redux/cart/operations';
 import CartCard from '../components/cart/CartCard';
+
 
 export function Cart() {
 	const dispatch = useDispatch();
 	const selector = useSelector((state) => state);
-    const carts = selector.carts;
+	
+    const carts = selector.cart;
 	const history = useHistory();
 	const isEmpty = carts && carts.length > 0 ? false : true;
 
 	useEffect(() => {
-		dispatch(getCart());
-		// eslint-disable-next-line
-	}, []);
+        dispatch(fetchItems());
+        dispatch(getCart());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 	return (
 		<>
 			<section className="main-wrapper">
@@ -38,20 +43,31 @@ export function Cart() {
 								<div>
 									<div className="sub-total">
 										<p>SUBTOTAL:</p>
-										<p>$ {carts.totalPrice}</p>
+										<p>$ {carts.total_price}</p>
 									</div>
 									<div className="total-item">
 										<p>ITEM(S):</p>
-										<p>{carts.totalCart}</p>
+										<p>{carts.quantity}</p>
 									</div>
-									<button
-										onClick={() => {
-											history.push("/checkout");
-										}}
-										className="proceed-checkout"
-									>
-										PROCEED TO CHECKOUT
-									</button>
+						<Button
+                            type='button'
+                            className='back'
+							onClick={() => {
+								history.push("/");
+							}}>
+                            <p className='back'>Continue Shopping</p>
+                        </Button>
+
+                        <Button
+                            type='button'
+                            className="proceed-checkout"
+                            disabled={carts.length === 0}
+							onClick={() => {
+								history.push("/checkout");
+							}}
+                        >
+                           <p className="proceed-checkout">PROCEED TO CHECKOUT</p>
+                        </Button>
 								</div>
 							</div>
 						</>

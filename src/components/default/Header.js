@@ -4,6 +4,7 @@ import Logo from '../../assets/images/HIVETechwear.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
 import { useSelector, useDispatch } from 'react-redux';
+import CrtLink from '../cart/crtLink';
 import { useHistory } from 'react-router-dom';
 import { LOGIN_USER_KEY } from '../../API';
 import { signOutAction } from '../../redux/user/actions';
@@ -13,6 +14,7 @@ export default function Header() {
 	const history = useHistory();
 	const dispatch = useDispatch();
 	const selector = useSelector(state => state);
+	const cart = selector.cart; 
 	const user = selector.user;
 
 	const handleChange = e => {
@@ -46,7 +48,7 @@ export default function Header() {
 					{user.id ? (
 						<>
 							<Link to='/signout' className='signUp signOut' onClick={handleSignout}>Sign Out</Link>
-							<Link to='/cart' className='checkout'><FontAwesomeIcon icon={faBagShopping} /></Link>
+							<CrtLink totalCart={cart.totalCart} ><FontAwesomeIcon icon={faBagShopping} /></CrtLink>
 						</>
 					) : (
 						<>

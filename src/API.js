@@ -15,7 +15,6 @@ api.interceptors.request.use(
     config => {
         if (config.requireToken) {
             const user = localStorage.getItem(LOGIN_USER_KEY) ? JSON.parse(localStorage.getItem(LOGIN_USER_KEY)) : null;
-            console.log(user)
             config.headers.common['Authorization'] = JSON.stringify({'token':user.token, 'id': user.id});
         }
             console.log()
@@ -26,8 +25,8 @@ api.interceptors.request.use(
 api.interceptors.response.use(
     res => res.data,
     err => {
-        if (err.response.status === 401) localStorage.removeItem(LOGIN_USER_KEY);
-		return Promise.reject(err);
+        // if (err.response.status === 401) localStorage.removeItem(LOGIN_USER_KEY);
+		// return Promise.reject(err);
     }
 );
 
@@ -66,16 +65,14 @@ export default class API {
         });
     }
 
-    addCart = async data => {
-        return api.post('/cart/add/', {
-            data: data,
+    addItem = async body => {
+        return api.post('/cart/add/', body, {
             requireToken: true
         })
     }
 
     updateCart = async (data, id) => {
-        return api.put(`/cart/update/${id}`, {
-            data: data,
+        return api.put(`/cart/update/${id}/`, data, {
             requireToken: true
         })
     }

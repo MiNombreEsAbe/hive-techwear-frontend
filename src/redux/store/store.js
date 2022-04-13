@@ -6,6 +6,7 @@ import { UserReducer } from "../user/reducers";
 import { ItemReducer } from "../items/reducers";
 import { CartReducer } from "../cart/reducers";
 import { CategoryReducer } from "../categories/reducers";
+import initialState from "./initialState";
 
 export default function createStore(history) {
     return reduxCreateStore(
