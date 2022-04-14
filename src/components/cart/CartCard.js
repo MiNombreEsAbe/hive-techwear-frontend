@@ -30,7 +30,7 @@ export default function CartCard(props) {
 				<img className="cart-image" src={`https://res.cloudinary.com/amhinkle/${image}`} alt="cart-item" />
 				<div className="cart-content">
 					<p className="cart-title">{name}</p>
-					<p className="cart-description">{description}</p>
+					<p className="cart-description">{description.slice(0, 20)}...</p>
 				</div>
 				<div className="price-content">
 					<p className="cart-price">${price}</p>

@@ -59,6 +59,12 @@
     border-radius: 3px;
 }
 
+.itemDetailsContent .form .submitError {
+    text-align: center;
+    margin: 5px 0;
+    color: #b30000;
+}
+
 .itemDetailsContent .form button {
     margin-top: 15px;
     padding: 5px 0;

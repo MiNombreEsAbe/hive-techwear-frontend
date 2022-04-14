@@ -5,8 +5,8 @@
 	grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 .main-wrapper {
+    padding: 10% 5%;
     display: block;
-    padding-top: 8%;
 }
 .cart-card {
     width: 100%;
@@ -18,7 +18,7 @@
     width: 35px
 }
 .cart-content {
-    margin-left: 24px;
+    /* margin-left: 24px; */
 }
 
 .price-content {
