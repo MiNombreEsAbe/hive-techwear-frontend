@@ -61,7 +61,8 @@ export default class API {
 
     getCart = async () => {
         return api.get('/cart/', {
-            requireToken: true
+            requireToken: true,
+            
         });
     }
 

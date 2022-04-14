@@ -6,19 +6,17 @@ import { getCart } from '../../redux/cart/operations';
 import { updateItem } from "../../redux/cart/operations";
 
 export default function CartCard(props) {
-	const { name, description, price } = props.cart.product;
+	const { image, name, description, price } = props.cart.product;
 	let quantity = props.cart.quantity;
-	let image = props.cart.image;
 	const dispatch = useDispatch();
-	const selector = useSelector(state => state);
-	
-	const item = selector.items;
-	const carts = selector.cart;
+	const selector = useSelector((state) => state);
 	const id = props.cart.id;
+	const carts = selector.cart;
 	const updateHandler = i => {
 
-		const quantity = Number (i.target.value);
+		const quantity = {"quantity": i.target.value};
 		dispatch(updateItem(quantity, id));
+		
    };
    useEffect(() => {
 	dispatch(fetchItems());
@@ -29,7 +27,7 @@ export default function CartCard(props) {
 	return (
 		<>
 			<div className="cart-card">
-				<img className="cart-image" src={image} alt="cart-item" />
+				<img className="cart-image" src={`https://res.cloudinary.com/amhinkle/${image}`} alt="cart-item" />
 				<div className="cart-content">
 					<p className="cart-title">{name}</p>
 					<p className="cart-description">{description}</p>
@@ -38,7 +36,7 @@ export default function CartCard(props) {
 					<p className="cart-price">${price}</p>
 					<div className="added-cart">
 					<Col md={3} className='size'>
-					<input
+					<input type='number' className='inp'
                         onBlur={updateHandler} defaultValue={quantity}
                      />
                     </Col>
