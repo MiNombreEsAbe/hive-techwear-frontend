@@ -3,7 +3,7 @@ import axios from 'axios';
 export const LOGIN_USER_KEY = 'HIVE_TECHGEAR_LOGIN_USER_KEY';
 
 // Base url for requests
-let baseURL = process.env.REACT_APP_API_BASE_URL || 'http://127.0.0.1:8000';
+let baseURL = 'https://hivetechwearbackend.herokuapp.com/';
 
 const api = axios.create({
     baseURL: baseURL,
