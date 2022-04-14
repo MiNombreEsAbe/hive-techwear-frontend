@@ -3,7 +3,8 @@ import axios from 'axios';
 export const LOGIN_USER_KEY = 'HIVE_TECHGEAR_LOGIN_USER_KEY';
 
 // Base url for requests
-let baseURL = 'https://hivetechwearbackend.herokuapp.com/';
+// let baseURL = 'https://hivetechwearbackend.herokuapp.com/';
+let baseURL = 'http://127.0.0.1:8000/';
 
 const api = axios.create({
     baseURL: baseURL,

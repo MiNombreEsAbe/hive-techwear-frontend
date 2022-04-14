@@ -18,6 +18,8 @@ export default function ItemList(props) {
     const items = selector.items;
     const carts = selector.cart;
 
+    console.log(selector)
+
     useEffect(() => {
         dispatch(getCategories());
         dispatch(fetchItems());
