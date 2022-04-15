@@ -23,8 +23,6 @@ export default function ItemList(props) {
         itemsInCart[carts[i]['product']['id']] = carts[i]['quantity']
     }
 
-    console.log(itemsInCart)
-
     useEffect(() => {
         dispatch(getCategories());
         dispatch(fetchItems());
@@ -121,8 +119,6 @@ export default function ItemList(props) {
                 break
             }
         }
-
-        console.log(itemsInCart)
         
         dispatch(updateItem({ quantity: (existingItem.quantity - 1).toString() }, existingItem['id']))
         

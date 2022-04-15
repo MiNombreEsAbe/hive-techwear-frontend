@@ -14,6 +14,8 @@ export default function CartCard(props) {
 
 		const quantity = {"quantity": i.target.value};
 		dispatch(updateItem(quantity, id));
+
+		if (i.target.value) window.location.reload(false);
 		
    };
    useEffect(() => {
@@ -25,10 +27,12 @@ export default function CartCard(props) {
 	return (
 		<>
 			<div className="cart-card">
-				<img className="cart-image" src={`https://res.cloudinary.com/amhinkle/${image}`} alt="cart-item" />
-				<div className="cart-content">
-					<p className="cart-title">{name}</p>
-					<p className="cart-description">{description.slice(0, 20)}...</p>
+				<div>
+					<img className="cart-image" src={`https://res.cloudinary.com/amhinkle/${image}`} alt="cart-item" />
+					<div className="cart-content">
+						<p className="cart-title">{name}</p>
+						<p className="cart-description">{description.slice(0, 20)}...</p>
+					</div>
 				</div>
 				<div className="price-content">
 					<p className="cart-price">${price}</p>
