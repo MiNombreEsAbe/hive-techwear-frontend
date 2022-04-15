@@ -1,8 +1,9 @@
 .cart-container {
-	display: grid;
+    display: inline-grid;
     margin: auto;
-	grid-gap: 30px;
-	grid-template-columns: repeat(5, minmax(0, 1fr));
+    /* grid-gap: 30px; */
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    align-items: baseline;
 }
 .main-wrapper {
     padding: 10% 5%;
@@ -88,7 +89,9 @@
 
 .sub-total {
     display: flex;
+    align-content: center;
     justify-content: space-between;
+    flex-direction: column-reverse;
 }
 
 
