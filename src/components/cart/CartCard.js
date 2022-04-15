@@ -15,7 +15,7 @@ export default function CartCard(props) {
 		const quantity = {"quantity": i.target.value};
 		dispatch(updateItem(quantity, id));
 
-		if (i.target.value) window.location.reload(false);
+		if (i.target.value === "0" || i.target.value === 0) window.location.reload(false);
 		
    };
    useEffect(() => {
