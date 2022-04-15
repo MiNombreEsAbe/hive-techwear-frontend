@@ -13,7 +13,7 @@ export const ContactUs = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_83xkqfo', 'template_qhc6qt9', form.current, 'k1rZyMHa8BFwYBJaX')
+    emailjs.sendForm('service_1wmg3cs', 'template_qhc6qt9', form.current, 'k1rZyMHa8BFwYBJaX')
       .then((result) => {
           console.log(result.text);
       }, (error) => {
@@ -39,12 +39,12 @@ export const ContactUs = () => {
     <FormContainer>
     <Form ref={form} onSubmit={sendEmail}>
       <label>Name</label>
-      <input className='name'type="text" name="user_name" />
+      <input className='name'type="text" name="from_name" />
       <label>Email</label>
-      <input className='name' type="email" name="user_email" />
+      <input className='name' type="email" name="from_email" />
       <label>Message</label>
       <div>
-      <textarea className="message" />
+      <textarea className="message" name='message'/>
       <input className='contactb' type="submit" value="Send"  onClick={refreshPage}/>
       </div>
     </Form>
