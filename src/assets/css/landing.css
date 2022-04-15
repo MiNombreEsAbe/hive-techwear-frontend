@@ -343,11 +343,11 @@
 	.kidney {
 		padding: inherit;
 		margin-bottom: 38px;
-		width: 200%;
+		width: 100%;
 	}
 	.ilk {
 		width: 60%;
-		margin-left: 35px;
+		margin: 0 auto;
 		display: grid;
 		grid-gap: 61px;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
