@@ -9,7 +9,7 @@ import { fetchItems } from "../redux/items/operations";
 import Sidebar from "../components/itemList/Sidebar";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 
 export default function ItemList(props) {
     const dispatch = useDispatch();
@@ -17,8 +17,13 @@ export default function ItemList(props) {
     const selector = useSelector(state => state);
     const items = selector.items;
     const carts = selector.cart;
+    const itemsInCart = {};
 
-    console.log(selector)
+    for (let i = 0; i < carts.length; i++) {
+        itemsInCart[carts[i]['product']['id']] = carts[i]['quantity']
+    }
+
+    console.log(itemsInCart)
 
     useEffect(() => {
         dispatch(getCategories());
@@ -53,7 +58,16 @@ export default function ItemList(props) {
                     </div>
                     <div className="priceAndAdd">
                         <p className="price">${prod['price']}</p>
-                        <button onClick={() => handleAdd(prod)}>Add <FontAwesomeIcon icon={faPlus} /></button>
+                        {
+                            (prod.id in itemsInCart) ?
+                            (<div className="addAndRemove">
+                                <button onClick={() => handleRemove(prod)}><FontAwesomeIcon icon={faMinus} /></button>
+                                <input value={itemsInCart[prod.id]} readOnly />
+                                <button onClick={() => handleAdd(prod)}><FontAwesomeIcon icon={faPlus} /></button>
+                            </div>) :
+                            (<button onClick={() => handleAdd(prod)}>Add <FontAwesomeIcon icon={faPlus} /></button>)
+                        
+                        }
                     </div>
                 </div>
             );
@@ -90,8 +104,42 @@ export default function ItemList(props) {
                 product: item['id'],
                 quantity: 1
             }
+
             dispatch(addItem(reqData))
         }
+    };
+
+    const handleRemove = item => {
+        let existingItem;
+
+        // itemsInCart[item['id']] -= 1;
+        if (itemsInCart[item['id']] === 1) window.location.reload(false)
+
+        for(let i = 0; i < carts.length; i++) {
+            if(carts[i]['product']['id'] === item['id']) {
+                existingItem = carts[i];
+                break
+            }
+        }
+
+        console.log(itemsInCart)
+        
+        dispatch(updateItem({ quantity: (existingItem.quantity - 1).toString() }, existingItem['id']))
+        
+        // if (itemExists) {
+        //     const reqData = {
+        //         quantity: existingItem.quantity + 1
+        //     }
+
+        //     dispatch(updateItem(reqData, existingItem['id']))
+        // } else {
+        //     const reqData = {
+        //         product: item['id'],
+        //         quantity: 1
+        //     }
+
+        //     dispatch(addItem(reqData))
+        // }
     };
     
     if (!selector.user.id) history.push('/signin');

@@ -69,6 +69,18 @@
     border-radius: 5px;
 }
 
+.itemList .items .item .priceAndAdd .addAndRemove {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.itemList .items .item .priceAndAdd input {
+    width: 15%;
+    border: none;
+    text-align: center;
+}
+
+
 .itemList .itemsWithPages .pagination {
     margin-top: 3rem;
 }
