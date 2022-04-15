@@ -15,7 +15,7 @@ export function HomeScreen() {
 	const dispatch = useDispatch();
 	const selector = useSelector((state) => state);
     const categories = selector.categories;
-
+	console.log(selector);
 
 	useEffect(() => {
 		dispatch(getCategories());

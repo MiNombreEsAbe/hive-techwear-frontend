@@ -36,6 +36,7 @@ export default function ItemDetails() {
         });
     }
 
+    const [submitError, setSubmitError] = useState(false);
     const handleSubmit = () => {
         if (!(
             values.name        === '' ||
@@ -45,7 +46,10 @@ export default function ItemDetails() {
             values.city        === '' ||
             values.state       === ''
         )) {
+            setSubmitError(false);
             history.push('/thankyou');
+        } else {
+            setSubmitError(true);
         }
     }
 
@@ -168,6 +172,7 @@ export default function ItemDetails() {
                         />
                     </div>
                     <button onClick={handleSubmit}>Confirm And Submit</button>
+                    {submitError && <p className="submitError">Please fill out the form!</p>}
                 </div>
             </div>
         </div>
