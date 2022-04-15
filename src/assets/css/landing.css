@@ -60,12 +60,12 @@
 }
 .void {
 	position: absolute;
-	top: 10%;
-	left: 10%;
-	width: 80%;
-	height: 79%;
-	padding: 10px;
-	background-color: rgb(255 255 255 / 50%);
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    background-color: rgb(255 255 255 / 50%);
 }
 .plus {
 	position: absolute;
@@ -92,7 +92,7 @@
 	width: 60%;
 	margin: auto;
 	display: grid;
-	grid-gap: 30px;
+	grid-gap: 97px;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 .kidney {
@@ -197,6 +197,11 @@
 .o-004 {
 	background-color: #c3d7c8;
 }
+.cardb {
+		flex: 1 1 auto;
+		min-height: 1px;
+	 	padding: 0 !important;
+	}
 @media only screen and (max-width: 1024px) {
     .nameC {
         font-size: 18px;
@@ -283,6 +288,13 @@
 	}
 }
 @media only screen and (max-width: 730px) {
+	.ilk {
+		width: 60%;
+		margin-left: 35px;
+		display: grid;
+		grid-gap: 86px;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
 	body {
 		font-size: 1.0rem;
 		font-weight: 400;
@@ -337,7 +349,7 @@
 		width: 60%;
 		margin-left: 35px;
 		display: grid;
-		grid-gap: 64px;
+		grid-gap: 61px;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
 }
@@ -351,9 +363,12 @@
 	.category-text {
         font-size: 16px;
     }
-
-	.bannertext {
-		top: 12%;
+	.ilk {
+		width: 60%;
+		margin-left: 35px;
+		display: grid;
+		grid-gap: 93px;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
 
 	.bannerimage {

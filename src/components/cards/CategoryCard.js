@@ -15,7 +15,7 @@ export default function CategoryCard(props) {
 
     return (
         <Card className='kidney'>
-            <Card.Body>
+            <Card.Body className='cardb'>
                     <Link to={urlDict[name]} >
                     <div className='carditems'>
                 <Card.Img src={image} className="imageC" alt="here" />

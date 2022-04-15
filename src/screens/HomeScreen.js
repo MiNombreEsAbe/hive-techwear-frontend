@@ -46,17 +46,21 @@ export function HomeScreen() {
 			</div>
             <div className='divcata'>
                 <p className='cata'>Categories</p>
-            <Row className='ilk' size={2}>
+            <Row className='ilk' >
+				<div>
             {categories.slice( 0, 2 ).map((c, index) => (
-                    <Col key={index}>
+                    <Col key={index} sm={50} md={20} lg={14} xl={15}>
                         <CategoryCard data={c}/>
                     </Col>
                                 ))}
+				</div>
+				<div>
             {categories.slice( 2, 4 ).map((c, index) => (
-                    <Col key={index}>
+                    <Col key={index} sm={13} md={13} lg={13} xl={13}>
                         <CategoryCard data={c}/>
                     </Col>
                                 ))}
+				</div>
             </Row>
             </div>
         <div className="divoff">
