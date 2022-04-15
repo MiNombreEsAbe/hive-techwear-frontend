@@ -364,8 +364,8 @@
         font-size: 16px;
     }
 	.ilk {
-		width: 60%;
-		margin-left: 35px;
+		width: 70%;
+		margin: 0 auto;
 		display: grid;
 		grid-gap: 93px;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
