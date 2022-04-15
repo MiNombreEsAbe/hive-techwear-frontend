@@ -403,3 +403,9 @@
 		padding: 0 18px;
 	}
 }
+
+@media only screen and (max-width: 560px) {
+	.kidney {
+		width: 25vw;
+	}
+}
