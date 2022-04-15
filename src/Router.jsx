@@ -23,7 +23,7 @@ const Router = () => {
     return (
         <Switch>
             <Route exact path={"/"} component = { HomeScreen }/>
-            <Route exact path={"/contact"} component = { ContactUs }/>
+            <Route exact path={"/contactus"} component = { ContactUs }/>
             <Route exact path={"/legal"} component = { FillerText }/>
             <Route exact path={"/policy"} component = { FillerText }/>
             <Route exact path={"/terms"} component = { FillerText }/>
