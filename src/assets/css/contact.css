@@ -1,6 +1,6 @@
 .message {
     border-radius: 4px !important;
-    width: 443px !important;
+    width: 100%;
     margin-bottom: 20px;
     height: 100%;
     padding: 75px 20px;
@@ -22,7 +22,7 @@
     margin-bottom: 30px;
 }
 .name {
-    width: 443px;
+    width: 100%;
 }
 .contactus {
     display: flow-root;
@@ -31,7 +31,7 @@
 }
 .con {
     box-sizing: inherit;
-    display: table-caption;
+    display: block;
 }
 /* @media only screen and (max-width: 450px) {
     body {
