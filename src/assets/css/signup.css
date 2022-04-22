@@ -1,0 +1,64 @@
+.signUpContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signUpForm {
+    width: 35%;
+}
+
+.signUpForm .title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-family: 'Sparta';
+}
+
+.signUpForm .signupInputContainer {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.signUpForm .signupInputContainer label {
+    margin: 0;
+    font-weight: bold;
+}
+
+.signUpForm .signupInputContainer input {
+    padding: 5px 10px;
+    background-color: #EAEAEA;
+    border: none;
+}
+
+.signUpForm .signupInputContainer input::placeholder {
+    color: #8C8C8C;
+}
+
+.signUpForm .signUpButton {
+    width: 100%;
+    margin: 0.5rem 0;
+    background-color: #373836;
+    color: #fff;
+    border: 2px solid #373836;
+    border-radius: 3px;
+    transition: 0.3s all;
+}
+
+.signUpForm .signUpButton:hover {
+    background-color: #fff;
+    color: #373836;
+    transition: 0.3s all;
+}
+
+.signUpForm .signinNotice a {
+    cursor: pointer;
+}
+
+@media (max-width: 650px) {
+    .signInForm {
+        width: 50%;
+    }
+}

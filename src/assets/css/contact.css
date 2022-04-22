@@ -1,0 +1,45 @@
+.message {
+    border-radius: 4px !important;
+    width: 100%;
+    margin-bottom: 20px;
+    height: 100%;
+    padding: 75px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+}
+.contacttitle1 {
+    color: black;
+    padding-top: 96px;
+}
+.contacttitle {
+    color: black;
+}
+.contactem {
+    color: rgb(26, 92, 26);
+}
+.contactb {
+    padding: 5px 46px;
+    margin-bottom: 30px;
+}
+.name {
+    width: 100%;
+}
+.contactus {
+    display: flow-root;
+    text-align: -webkit-center;
+    background-color: lightgrey;
+}
+.con {
+    box-sizing: inherit;
+    display: block;
+}
+/* @media only screen and (max-width: 450px) {
+    body {
+        width: 115%;
+    }
+}
+@media only screen and (max-width: 300px){
+    body {
+        width: 170%;
+    }
+} */
